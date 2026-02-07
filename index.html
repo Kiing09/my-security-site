@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSS | King's Security Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="logo.png" alt="KSS Logo" class="logo">
+                <span class="brand-name">KSS</span>
+            </div>
+
+            <div class="ops-clocks">
+                <div class="clock"><span class="city">LDN</span><span class="time" id="london-time">00:00</span></div>
+                <div class="clock"><span class="city">DXB</span><span class="time" id="dubai-time">00:00</span></div>
+                <div class="clock"><span class="city">SGP</span><span class="time" id="singapore-time">00:00</span></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="client-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PREMIUM PROTECTION.</h1>
+            <p>Uncompromised discretion for global enterprises.</p>
+            <a href="#services" class="cta-button">View Operational Sectors</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="squad.jpg" alt="KSS Squad">
+            </div>
+            <div class="about-text">
+                <span class="prefix">ELITE OPERATIONS</span>
+                <h2>The Standard in Private Intelligence</h2>
+                <p>Personnel drawn from the world's most elite military and intelligence units.</p>
+                <ul class="stats">
+                    <li><strong>15+</strong> Years Average Experience</li>
+                    <li><strong>100%</strong> Mission Success Rate</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Secure Consultation</h2>
+                <p>Transmission is encrypted via 256-bit SSL protocols.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Secure Email" required>
+                    
+                    <div class="file-upload-wrapper">
+                        <label for="file-upload" class="custom-file-upload">
+                            ATTACH ENCRYPTED DOSSIER
+                        </label>
+                        <input id="file-upload" type="file" />
+                    </div>
+
+                    <textarea placeholder="Nature of Inquiry" rows="4"></textarea>
+                    <button type="submit" class="submit-btn">Transmit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="ticker-bar">
+        <div class="ticker-title">MISSION STATUS</div>
+        <div class="ticker-content">
+            <div class="ticker-move">
+                <span>[SECURE CONNECTION ESTABLISHED]</span>
+                <span>[SATELLITE UPLINK: ACTIVE]</span>
+                <span>[NORTH SECTOR: CLEAR]</span>
+                <span>[UPDATING THREAT DATABASE...]</span>
+                <span>[ALPHA TEAM ON STANDBY]</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateClocks() {
+            const options = { hour: '2-digit', minute: '2-digit', hour12: false };
+            document.getElementById('london-time').innerHTML = new Date().toLocaleTimeString('en-GB', { ...options, timeZone: 'Europe/London' });
+            document.getElementById('dubai-time').innerHTML = new Date().toLocaleTimeString('en-GB', { ...options, timeZone: 'Asia/Dubai' });
+            document.getElementById('singapore-time').innerHTML = new Date().toLocaleTimeString('en-GB', { ...options, timeZone: 'Asia/Singapore' });
+        }
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    </script>
+</body>
+</html>
